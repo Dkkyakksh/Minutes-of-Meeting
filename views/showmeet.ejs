@@ -59,6 +59,16 @@
                         </div>
           </div>
           <div class="meet-mom" style="grid-column: 1/span 3;">
+            <h4>Minutes of Meeting:</h4>
+              <form onsubmit="return false;" id="form">
+                <div class="form-group" >
+                    <input type="textarea" placeholder="Enter..." id="meetingMinute" style="width:100%;display:block;">
+                    <span class="form-dets">
+                      <label for="actionPlan">Action Plan:</label>
+                      <input type="textbox" placeholder="Enter..." id="actionPlan" style="width:30%;display:inline-block;">
+                    </span>
+                  </div>
+              </form>
           </div>  
           <div class="meet-attendee">
             <h4 class="text-center">Attendees</h4>
@@ -71,7 +81,7 @@
               <button class="attendBtnInactive" style="display:block;" disabled>Attending</button>
           <%}else if(data.attending.present === 'no'){%>
               <button id="attendBtnActive" style="display:block;" data-meet = '<%= JSON.stringify(data.meet)%>'>Attending</button>
-              <script src="/js/showmeet.js"></script>      
+              <script src="/js/smattend.js"></script>      
           <%}%> 
           </div>
       </div> 

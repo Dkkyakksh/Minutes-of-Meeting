@@ -14,9 +14,16 @@
 
 .meet-attendee{
     min-height: 500px;
-    margin: 10px;
+    margin: 0 1px;
     padding: 10px 20px;
-    border-left: 1px double black;
+    border-left: 1px solid black;
+}
+
+.meet-mom{
+    min-height: 500px;
+    margin: 0 1px;
+    padding: 10px 20px;
+    border-right: 1px solid black;
 }
 
 .meet-item{
