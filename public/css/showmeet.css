@@ -1,0 +1,25 @@
+.meet-area{
+    display: grid;
+    grid-template-columns: auto auto auto auto ;
+    grid-template-rows: auto auto;
+}
+.meet-dets{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: rgb(19, 19, 139);
+    border-bottom: 2px solid rgb(27, 27, 194);
+    padding:10px 20px;
+}
+
+.meet-attendee{
+    min-height: 500px;
+    margin: 10px;
+    padding: 10px 20px;
+    border-left: 1px double black;
+}
+
+.meet-item{
+    flex: 0 0 calc(100%/2);
+    color: white;
+}

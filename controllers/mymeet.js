@@ -16,7 +16,7 @@ const mymeet = async (req, res, next)=>{
             db.query(query, [host],(err, result)=>{
                 if(err) return next(err);
                 // req.meets = result[0];
-                db.query("SELECT e.name, m.Host, m.Department, m.Date, m.Time, m.Location, m.Agenda, m.zoom FROM meeting m JOIN employee e ON m.Host=e.employeeid WHERE m.Department = ? ORDER BY Date,Time ASC;", [result[0].Department], (err,result2)=>{
+                db.query("SELECT e.name, m.meetid, m.Host, m.Department, m.Date, m.Time, m.Location, m.Agenda, m.zoom FROM meeting m JOIN employee e ON m.Host=e.employeeid WHERE m.Department = ? ORDER BY Date,Time ASC;", [result[0].Department], (err,result2)=>{
                     if(err) return next(err);
                     req.meets = result2;
                     return next();

@@ -27,40 +27,86 @@
         </li>
         </ul> 
       </nav>
-
       <div class="meet-container">
       <% meets.forEach(function(meet){%> 
-        
-        <div class="meet-cell">
-          <div class="meet-item meet-heading" style="grid-column: 1/ span 3;">
-            <h5><%= meet.Department %> Department</h5>
-          </div>
-          <div class="meet-item meet-date">
-            <p> <b>Date: </b> <%= meet.Date.toISOString().split('T')[0] %> <p>
+        <% const today = new Date();%>
+        <% if(compareTime(today, meet.Date, meet.Time)){}else{ %>
+
+          <div class="meet-cell">
+            <div class="meet-item meet-heading" style="grid-column: 1/ span 3;">
+              <h5><%= meet.Department %> Department</h5>
             </div>
-            <div class="meet-item meet-time">
-              <p> <b>Time: </b> <%= formatTime(meet.Time) %> <p>
+            <div class="meet-item meet-date">
+              <p> <b>Date: </b> <%= meet.Date.toLocaleDateString("en-GB",{
+                day:"numeric",
+                month:"short",
+                year:"numeric"
+              }) %> <p>
               </div>
-              <div class="meet-item meet-loc">
-                <p> <b>Location: </b> <%= meet.Location %> <p>
+              <div class="meet-item meet-time">
+                <p> <b>Time: </b> <%= formatTime(meet.Time) %> <p>
                 </div>
-                <div class="meet-item meet-agenda" style="grid-column: 1/ span 3;">
-                  <p> <b>Agenda: </b> <%= meet.Agenda %> <p>
+                <div class="meet-item meet-loc">
+                  <p> <b>Location: </b> <%= meet.Location %> <p>
                   </div>
-                  <div class="meet-item meet-zoom" style="grid-column: 1/ span 2;">
-                    <p> <b>Zoom link: </b> <%= meet.zoom %> <p>
+                  <div class="meet-item meet-agenda" style="grid-column: 1/ span 3;">
+                    <p> <b>Agenda: </b> <%= meet.Agenda %> <p>
                     </div>
-                    <div class="meet-item meet-host">
-                      <p> <b>Host: </b> <%= meet.name %> <p>
+                    <div class="meet-item meet-zoom" style="grid-column: 1/ span 2;">
+                      <p> <b>Zoom link: </b> <%= meet.zoom %> <p>
                       </div>
-                    </div>
+                      <div class="meet-item meet-host">
+                        <p> <b>Host: </b> <%= meet.name %> <p>
+                        </div>
+                        <button class="btn btn-primary" id="meetbtn" onclick="redirecttm('<%= JSON.stringify(meet)%>')">Go to Meeting</button>
+            </div>
+            <%}%>
       <% }) %> 
-      </div>
+    </div>
+        <script>
+            function redirecttm(meet){
+              const jsonObject = JSON.parse(meet);
+              const mid = jsonObject.meetid;
+              // console.log(mid);
+                fetch("/api/mompage/" + mid, {
+                  method: "GET"
+                })
+                .then(res=>{
+                    window.location.href = '/api/mompage/' + mid;
+                })
+                .catch(err=>{
+                  console.log(err);
+                })
+            }
+        </script>
+      <%
+          function compareTime(today, dateString, timeString){
+              const mdate = dateString.toLocaleDateString();
+              const dateComponents = mdate.split("/");
+              const timeComponents = timeString.split(":");
+              const mfdate = new Date(
+                dateComponents[2],
+                dateComponents[1]-1,
+                dateComponents[0],
+                timeComponents[0],
+                timeComponents[1],
+                timeComponents[2],
+              );
+
+              if(today > mfdate){
+                  return true;
+              }else{return false;}
+
+
+          }
+      %>
       <%
           function formatTime(timeString){
               const time = new Date(`1970-01-01T${timeString}`);
               return time.toLocaleTimeString('en-US', {hour:'numeric', minute:'numeric', hour12:true});
           }
-      %> 
+      %>
+    
+      
 </body>
 </html>

@@ -25,12 +25,13 @@ router.get('/profile', loggedIn, (req,res)=>{
 
 router.get('/mymeet', mymeet, (req,res)=>{
     if(req.meets){
-        res.render("mymeet", {status:"LoggedIn", meets: req.meets} );
+        res.render("mymeet", {status:"Meetings Found", meets: req.meets} );
     }
     else{
         res.render("index", {status:"no", user: "nothing"});
 }
 })
+
 
 
 router.get('/createmeet', (req,res)=>{

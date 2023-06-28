@@ -9,7 +9,6 @@ const loggedIn = (req,res,next)=>{
         db.query("SELECT * FROM employee WHERE employeeid = ?", [decoded.id], (err,result)=>{
             if(err) return next(err);
             req.user = result[0];
-
             //this can be accessed in the subsequent middleware or route handlers
             //if user is not authenticated then next() present below will execute
             return next();
