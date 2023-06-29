@@ -11,7 +11,7 @@ const createmeet = async (req,res)=>{
         const query = "INSERT INTO meeting (Host, Department, Date, Time, Location, Agenda, zoom) VALUES (?,?,?,?,?,?,?)";
         db.query(query, [host, department, date, time, location, agenda, zoomlink], (err,result)=>{
             if(err) throw err;
-            console.log(result);
+            // console.log(result);
             return res.json({status:"success", success: "Meeting has been created"});
         })
     }

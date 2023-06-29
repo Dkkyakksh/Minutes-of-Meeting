@@ -60,15 +60,24 @@
           </div>
           <div class="meet-mom" style="grid-column: 1/span 3;">
             <h4>Minutes of Meeting:</h4>
-              <form onsubmit="return false;" id="form">
+              <ul>
+              <% if(data.meetmomap){%>
+                <% data.meetmomap.forEach(function(mmomap){%>
+                  <li><%= mmomap.MeetingMinutes%></li>
+                  <li style="transform:translateX(30px); list-style-type:'->';"><%= mmomap.ActionPlan%></li><br><hr>
+                <%})%>
+              <%}%></ul>
+              <form onsubmit="return false;" id="form" data-form="<%= JSON.stringify(data.meet)%>">
                 <div class="form-group" >
-                    <input type="textarea" placeholder="Enter..." id="meetingMinute" style="width:100%;display:block;">
+                    <textarea placeholder="Enter..." rows="3" id="meetingMinute" style="width:100%;display:block; margin:10px"></textarea>
                     <span class="form-dets">
                       <label for="actionPlan">Action Plan:</label>
                       <input type="textbox" placeholder="Enter..." id="actionPlan" style="width:30%;display:inline-block;">
                     </span>
+                    <button type="submit" id="addBtn" class="btn btn-primary">ADD</button>
                   </div>
               </form>
+              <script src="/js/smmom.js"></script>
           </div>  
           <div class="meet-attendee">
             <h4 class="text-center">Attendees</h4>

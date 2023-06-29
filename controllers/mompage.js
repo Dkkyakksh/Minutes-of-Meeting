@@ -60,14 +60,29 @@ const getattendees = async(req,res, next)=>{
     }
 }
 
+const getmomap = async(req, res, next)=>{
+    try{
+        const {mid} = req.params;
+        const query4 = "SELECT * FROM meetingminutes WHERE meetid = ?";
+        db.query(query4, [mid], (err,result)=>{
+            if(err) return next(err);
+            req.meetmomap = result; 
+            return next();
+        })
+
+    }catch(err){
+        next(err);
+    }
+}
+
 const putattendance = async(req, res)=>{
     try{
             const {mid} = req.params;
             const decoded = jwt.verify(req.cookies.userRegistered, process.env.JWT_SECRET);
-            const query="INSERT INTO attendees (meetid, employeeid) VALUES (? , ?)";
-            db.query(query, [[mid], [decoded.id]], (err, result)=>{
+            const query5="INSERT INTO attendees (meetid, employeeid) VALUES (? , ?)";
+            db.query(query5, [[mid], [decoded.id]], (err, result)=>{
                 if(err) return next(err);
-                console.log(result);
+                // console.log(result);
                 return res.json({status:"success", success:"User is attending the meet"});
             })
 
@@ -76,4 +91,18 @@ const putattendance = async(req, res)=>{
     }
 }
 
-module.exports = {getmeetdets,getattendees, putattendance};
+const momap = async(req,res)=>{
+    try{
+            const {mid, meetingMinute, actionPlan} = req.body;
+            const query6 = "INSERT INTO meetingminutes (meetid, MeetingMinutes, ActionPlan) VALUES (?,?,?);";
+            db.query(query6, [mid, meetingMinute, actionPlan], (err,result)=>{
+                if(err) throw err;
+                console.log(result);
+                return res.json({status:"success", success:"Added current points"});
+            })
+    }catch(err){
+        console.log(err);
+    }
+} 
+
+module.exports = {getmeetdets,getattendees, putattendance, momap, getmomap};
