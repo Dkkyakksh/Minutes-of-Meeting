@@ -60,23 +60,42 @@
           </div>
           <div class="meet-mom" style="grid-column: 1/span 3;">
             <h4>Minutes of Meeting:</h4>
+            
               <ul>
               <% if(data.meetmomap){%>
                 <% data.meetmomap.forEach(function(mmomap){%>
                   <li><%= mmomap.MeetingMinutes%></li>
-                  <li style="transform:translateX(30px); list-style-type:'->';"><%= mmomap.ActionPlan%></li><br><hr>
-                <%})%>
+                  <li style="transform:translateX(30px); list-style-type:'->';"><%= mmomap.ActionPlan%></li>
+                  <button class="editBtn" data-id="<%= mmomap.id%>">EDIT</button>
+                  <button class="deleteBtn" data-id="<%= mmomap.id%>">DELETE</button><br><hr>            
+                  
+                  <section hidden class="update-mom" data-id="<%= mmomap.id%>">
+                    <h5>Update:</h5>
+                    <form onsubmit="return false;" id="update-form" data-updateForm="<%= JSON.stringify(data.meet)%>">
+                      <div class="form-group" >
+                          <textarea placeholder="Enter..." rows="3" id="update-meetingMinute" required style="width:100%;display:block; margin:10px"></textarea>
+                          <span class="form-dets">
+                            <label for="actionPlan">Action Plan:</label>
+                            <input type="textbox" placeholder="Enter..." id="update-actionPlan" required style="width:30%;display:inline-block;">
+                          </span>
+                          <button id="updateBtn" class="btn btn-primary">Update</button>
+                        </div>
+                    </form>
+                  </section>
+
+                  <%})%>
               <%}%></ul>
-              <form onsubmit="return false;" id="form" data-form="<%= JSON.stringify(data.meet)%>">
+              
+              <form onsubmit="return false" id="form" data-form="<%= JSON.stringify(data.meet)%>">
                 <div class="form-group" >
-                    <textarea placeholder="Enter..." rows="3" id="meetingMinute" style="width:100%;display:block; margin:10px"></textarea>
+                    <textarea placeholder="Enter..." rows="3" id="meetingMinute" required style="width:100%;display:block; margin:10px"></textarea>
                     <span class="form-dets">
                       <label for="actionPlan">Action Plan:</label>
-                      <input type="textbox" placeholder="Enter..." id="actionPlan" style="width:30%;display:inline-block;">
+                      <input type="text" placeholder="Enter..." id="actionPlan" required style="width:30%;display:inline-block;">
                     </span>
-                    <button type="submit" id="addBtn" class="btn btn-primary">ADD</button>
+                    <button id="addBtn" class="btn btn-primary">ADD</button>
                   </div>
-              </form>
+                </form>
               <script src="/js/smmom.js"></script>
           </div>  
           <div class="meet-attendee">

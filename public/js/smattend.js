@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function(){
         fetch("/api/mompage/" + mid + "/attendance", {
             method: "POST",
             body: JSON.stringify(meetData),    
-            headers:{
+            headers:{ 
               'ContentType' : 'application/json'
             }
           })

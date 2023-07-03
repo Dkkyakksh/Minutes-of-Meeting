@@ -3,7 +3,7 @@ const router = express.Router();
 
 const login = require('./login');
 const createmeet = require('./createmeet');
-const {getmeetdets,getattendees,putattendance, momap, getmomap} = require('../controllers/mompage');
+const {getmeetdets,getattendees,putattendance, momap, getmomap, updateMomap, deleteMomap} = require('../controllers/mompage');
 
 
 router.get('/mompage/:mid', getmeetdets, getattendees, getmomap, (req,res)=>{
@@ -36,5 +36,11 @@ router.post('/mompage/momap', momap, (req,res)=>{
 
 router.post('/createmeet', createmeet);
 router.post('/login', login);
+
+router.patch("/mompage/update", updateMomap, (req,res)=>{
+})
+
+router.delete("/mompage/delete/:momapid", deleteMomap, (req,res)=>{
+})
 
 module.exports = router;

@@ -97,7 +97,7 @@ const momap = async(req,res)=>{
             const query6 = "INSERT INTO meetingminutes (meetid, MeetingMinutes, ActionPlan) VALUES (?,?,?);";
             db.query(query6, [mid, meetingMinute, actionPlan], (err,result)=>{
                 if(err) throw err;
-                console.log(result);
+                // console.log(result);
                 return res.json({status:"success", success:"Added current points"});
             })
     }catch(err){
@@ -105,4 +105,32 @@ const momap = async(req,res)=>{
     }
 } 
 
-module.exports = {getmeetdets,getattendees, putattendance, momap, getmomap};
+const updateMomap = async(req,res)=>{
+    try{
+            const {id, mid,meetingMinute, actionPlan} = req.body;
+            const query7 = "UPDATE meetingminutes SET MeetingMinutes=?, ActionPlan=? WHERE id=?";
+            db.query(query7, [meetingMinute, actionPlan, id], (err,result)=>{
+                if(err) throw err;
+                console.log(result);
+                return res.json({status:"success", success:"Updated!"});
+            })
+    }catch(err){
+        console.log(err);
+    }
+}
+
+const deleteMomap = async(req,res)=>{
+    try{
+            const momapid = req.params;
+            const query8 = "DELETE FROM meetingminutes WHERE id=?";
+            db.query(query8, [momapid.momapid], (err,result)=>{
+                if(err) throw err;
+                // console.log(result);
+                return res.json({status:"success", success:"Deleted!"})
+            })
+    }catch(err){
+        console.log(err);
+    }
+}
+
+module.exports = {getmeetdets,getattendees, putattendance, momap, getmomap, updateMomap, deleteMomap};
