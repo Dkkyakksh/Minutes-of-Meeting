@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content ="ie=edge"> 
     <title>Profile</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="/css/profile.css" >
 </head>
-<body style="background-color: rgb(0, 110, 110);">
+<body style="background-image: url('/img/profile.jpg'); background-size: 100% 100%; background-repeat: no-repeat;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Profile</a>
         <ul class="navbar-nav" style="display:flex; flex-direction: row;">
@@ -28,21 +28,11 @@
           
         </ul> 
       </nav>
-      <div class="card container" style="
-                    height:500px;
-                    display:flex;
-                    flex-wrap:nowrap;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    /* width: 40%;  */
-                    border:1px solid black; 
-                    transform:translateY(40px);
-                    margin:20px 10px 40px 10px;
-                    padding:40px;
-                    overflow: hidden;">
-        <div class="card-body-img" style="flex: 1 1 150px;">
-          <img src="../img/pfp.jpg" class="image" style="width:150px; height:150px; margin:10px 0;">
-        </div><div class="card-body-det" style="flex: 5 1 150px; transform:translateY(140px);">
+      <div class="mainWorkArea">
+      <div class="card-container">
+        <div class="card-body-img" >
+          <img src="../img/pfp.jpg" class="image" style="width:150px; height:150px; border-radius:50% ;margin:10px 0;">
+        </div><div class="card-body-det" style="justify-content: grid-end;">
             <!-- <hr style="height:1px; margin:10px 0 35px 0 ; background:rgb(90, 88, 88)"> -->
           <h3 class="card-title" style="font-weight:700;"><%= user.name%></h3>
           <h6 class="card-subtitle mb-2 text-muted"><%= user.Designation%></h6>
@@ -51,6 +41,6 @@
           <p class="card-text"><b> Mobile no:</b> <%= user.Phone%></p>
           <p class="card-text"><b> Email:</b> <%= user.CompanyEmail%></p>
         </div>
-      </div>
+      </div></div>
 </body>
 </html>

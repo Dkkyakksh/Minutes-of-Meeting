@@ -1,3 +1,7 @@
+body{
+    background-image: url('../img/showmeet.jpg');
+    background-size: 100% 100%;
+}
 .meet-area{
     display: grid;
     grid-template-columns: auto auto auto auto ;
@@ -7,13 +11,20 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background: rgb(19, 19, 139);
-    border-bottom: 2px solid rgb(27, 27, 194);
+    background: rgba(0, 0, 0, 0.90);
+    padding:10px 20px;
+}
+.meet-dets:hover{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.97);
     padding:10px 20px;
 }
 
 .meet-attendee{
     min-height: 500px;
+    font-weight:600;
     margin: 0 1px;
     padding: 10px 20px;
     border-left: 1px solid black;
@@ -21,9 +32,9 @@
 
 .meet-mom{
     min-height: 500px;
-    margin: 0 1px;
+    margin: 10px 20px;
     padding: 10px 20px;
-    border-right: 1px solid black;
+    background: rgba(255, 255, 255, 0.76);
 }
 
 .meet-item{
@@ -34,7 +45,7 @@
 .editBtn, .deleteBtn, #addBtn, #attendBtnActive, #updateBtn{
     display: inline-block;
     color:white;
-    background: rgb(0,123,255);
+    background: rgb(17, 17, 17);
     padding: 6px 10px;
     border: none;
     border-radius: 2px;
@@ -42,7 +53,7 @@
 .attendBtnInactive{
     display: inline-block;
     color:white;
-    background: rgba(0,123,255, 0.5);
+    background: rgba(17, 17, 17, 0.5);
     padding: 6px 10px;
     border: none;
     border-radius: 2px;
