@@ -30,3 +30,20 @@
     flex: 0 0 calc(100%/2);
     color: white;
 }
+
+.editBtn, .deleteBtn, #addBtn, #attendBtnActive, #updateBtn{
+    display: inline-block;
+    color:white;
+    background: rgb(0,123,255);
+    padding: 6px 10px;
+    border: none;
+    border-radius: 2px;
+}
+.attendBtnInactive{
+    display: inline-block;
+    color:white;
+    background: rgba(0,123,255, 0.5);
+    padding: 6px 10px;
+    border: none;
+    border-radius: 2px;
+}
