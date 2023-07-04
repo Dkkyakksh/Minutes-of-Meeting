@@ -1,0 +1,14 @@
+.mainArea{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    width:100%;
+}
+.searchArea{
+    margin: 20px 30px;
+    display: flex;
+    flex-direction: row;
+}
+.flex-Item{
+    margin: 0 20px 0 0 ;
+}

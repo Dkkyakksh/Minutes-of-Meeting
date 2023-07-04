@@ -23,6 +23,10 @@ router.get('/profile', loggedIn, (req,res)=>{
 }
 })
 
+router.get('/search', (req,res)=>{
+    res.render("searchbar", {searchMeets: ""});
+})
+
 router.get('/mymeet', mymeet, (req,res)=>{
     if(req.meets){
         res.render("mymeet", {status:"Meetings Found", meets: req.meets} );

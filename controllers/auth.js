@@ -1,10 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
+const searchquery = require('./searchres');
 const login = require('./login');
 const createmeet = require('./createmeet');
 const {getmeetdets,getattendees,putattendance, momap, getmomap, updateMomap, deleteMomap} = require('../controllers/mompage');
 
+router.get('/searchres', searchquery, (req,res)=>{
+    if(req.searchMeets){
+        res.render("searchbar", {searchMeets: req.searchMeets});
+    }
+})
 
 router.get('/mompage/:mid', getmeetdets, getattendees, getmomap, (req,res)=>{
     if(req.meet){    
@@ -25,7 +31,7 @@ router.get('/mompage/:mid', getmeetdets, getattendees, getmomap, (req,res)=>{
     }else{
         res.render("showmeet", {status: "No meeting details found!"})
     }        
-})
+});
 
 router.post('/mompage/:mid/attendance', putattendance, (req,res)=>{
     res.redirect(`/mompage/:${req.params.mid}`);
