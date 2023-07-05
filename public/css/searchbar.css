@@ -1,3 +1,9 @@
+body{
+    background-image: url('../img/search.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
 .mainArea{
     display: grid;
     grid-template-columns: auto;
@@ -5,10 +11,52 @@
     width:100%;
 }
 .searchArea{
+    width: 750px;
+    height: 100px;
     margin: 20px 30px;
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.66);
+    border-radius:10px;
+    font-size: large;
 }
+
+.searchArea:hover{
+    box-shadow: 0 0 10px white;
+    background: rgba(0,0,0,0.86);
+}
+
 .flex-Item{
     margin: 0 20px 0 0 ;
+}
+
+.meet-container{
+    margin:15px 20px;
+    padding:15px 20px;
+}
+.meet-cell{
+    margin:15px 20px;
+    padding:15px 20px;
+    display: grid;
+    background:rgba(0,0,0,0.66);
+    color:white;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    border: 1.5px solid black;
+    border-radius: 10px;
+}
+.meet-cell:hover{
+    box-shadow: 0 0 10px white;
+    background:rgba(0,0,0,0.86);
+}
+
+#meetbtn{
+    display: inline-block;
+    font-weight: 600;
+    color:rgb(0,123,255);
+    background: rgb(255, 255, 255);
+    padding: 6px 10px;
+    border: none;
+    border-radius: 2px;
 }
