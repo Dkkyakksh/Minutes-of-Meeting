@@ -6,49 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content ="ie=edge"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/searchbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/nav.css">
     <script src="https://kit.fontawesome.com/378dea004a.js" crossorigin="anonymous"></script>
     <title>Search Page</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Search Page</a>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
+  <div class="Navbar">
+    <div class="logo">
+        <img src="/img/logo.gif">
+    </div>
+    <div class="Nav-links">
+        <ul>
+            <li>
+                <a class="Navlink" href="/">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/mymeet">My Meetings</a>
+            <li>
+              <a class="Navlink" href="/mymeet">My Meetings</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/createmeet">Create a Meeting</a>
+            <li>
+              <a class="Navlink" href="/createmeet">Create a Meeting</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/profile">Profile</a>
+            <li>
+              <a class="Navlink" href="/search">Search</a>
             </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/logout">Log out</a>
-          </li>
-          </ul> 
-      </nav>
+            <li>
+              <a class="Navlink" href="/profile">Profile</a>
+            </li>
+            <li>
+                <a class="Navlink" href="/logout">Log out</a>
+            </li>
+        </ul>
+    </div>
+  </div>
       <div class="mainArea">
         <div class="searchArea">
           <form onsubmit="return false;" id="searchForm">
-            <label for="Search-dept" style="color: whitesmoke; margin-left: 35px;">Department: </label>
+            <label for="Search-dept" style="color: rgb(3,25,87); margin-left: 35px;">Department: </label>
                     <select class="form-control flex-Item" id="Search-dept" style="width:auto;display:inline-block;">
                         <option>Choose...</option>
-                        <option>Support</option>
-                        <option>Services</option>
-                        <option>Marketing</option>
+                        <option>Finance</option>
+                        <option>Sales</option>
+                        <option>Information Systems</option>
                         <option>Engineering</option>
-                        <option>Product Management</option>
-                        <option>Business Development</option>
-                        <option>Accounting</option>
-                        <option>Training</option>
-                        <option>Research and Development</option>
+                        <option>Human Resources</option>
                     </select>
-            <label for="Search-date" style="color: whitesmoke;">Date: </label>
+            <label for="Search-date" style="color: rgb(3,25,87);">Date: </label>
                     <input type="date" id="Search-date" class="flex-Item" >
-            <button type="submit" id="searchBtn">Search</button>
+            <button type="submit" id="searchBtn" class="btn btn-primary">Search</button>
           </form>
           <script src="/js/search.js"></script>
         </div>  

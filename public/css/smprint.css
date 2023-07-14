@@ -1,0 +1,24 @@
+@media print{
+    .Navbar, .editBtn, .deleteBtn, #addBtn, #attendBtnActive, #updateBtn, #attendBtnInactive, #printBtn,hr,.heading-attendee, .form-group, .update-mom{
+        display:none;
+    }
+    .hidden-attendee{
+        visibility:visible;
+    }
+    .meet-dets{
+        color:black;
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .meet-mom {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    .meet-attendee {
+        grid-column: 1;
+        grid-row: 3;
+        border-top: 3px solid rgb(3,25,87);
+        border-left: none;
+    }
+}

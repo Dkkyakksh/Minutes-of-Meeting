@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     })
 const addBtn = document.getElementById("addBtn");
 const updateBtn = document.getElementById("updateBtn");
+const printBtn = document.getElementById("printBtn");
 
 addBtn.onclick = function (){
     const meet = document.getElementById("form");
@@ -77,6 +78,8 @@ addBtn.onclick = function (){
             })
     }
 
-
+    printBtn.onclick = ()=>{
+        window.print();
+    }
 
 });

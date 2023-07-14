@@ -1,7 +1,5 @@
 body{
-    background-image: url('../img/search.jpg');
-    background-size: 100%;
-    background-repeat: no-repeat;
+    background: rgb(219,219,219);
 }
 
 .mainArea{
@@ -17,14 +15,9 @@ body{
     display: flex;
     flex-direction:row;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.66);
+    background-color: rgb(255, 255, 255);
     border-radius:10px;
     font-size: large;
-}
-
-.searchArea:hover{
-    box-shadow: 0 0 10px white;
-    background: rgba(0,0,0,0.86);
 }
 
 .flex-Item{
@@ -39,24 +32,24 @@ body{
     margin:15px 20px;
     padding:15px 20px;
     display: grid;
-    background:rgba(0,0,0,0.66);
-    color:white;
+    background:rgba(255, 255, 255, 0.66);
+    color:rgb(0, 0, 0);
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto auto;
-    border: 1.5px solid black;
+    border: 1.5px solid rgb(150, 150, 150);
     border-radius: 10px;
-}
-.meet-cell:hover{
-    box-shadow: 0 0 10px white;
-    background:rgba(0,0,0,0.86);
 }
 
 #meetbtn{
     display: inline-block;
     font-weight: 600;
-    color:rgb(0,123,255);
-    background: rgb(255, 255, 255);
+    background:rgb(0,123,255);
+    color: rgb(255, 255, 255);
     padding: 6px 10px;
     border: none;
     border-radius: 2px;
+}
+
+#meetbtn:hover{
+    background:rgb(1, 100, 206);
 }

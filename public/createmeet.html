@@ -5,45 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content ="ie=edge"> 
     <title>Create Meeting</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/nav.css">
     <link rel="stylesheet" type="text/css" href="./css/cmeet.css">
     
 </head>
-<body style="background-image: url('./img/createMeet.jpg'); background-size:cover;">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Create a meeting</a>
-        <ul class="navbar-nav justify-content-end" style="display:flex; flex-direction: row;">
-            <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/mymeet">My Meetings</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/search">Search</a>
-              </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/profile">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/logout">Log out</a>
-            </li>
-          </ul>
-      </nav>
-    <div class="main-area" style="background:rgb(0, 0, 0, 0.66);font-size:1.12em; color:white; font-weight:600; margin:30px; border-radius: 10px; ">
+<body style="background: rgb(219, 219, 219);">
+    <div class="Navbar">
+        <div class="logo">
+            <img src="/img/logo.gif">
+        </div>
+        <div class="Nav-links">
+            <ul>
+                <li>
+                    <a class="Navlink" href="/">Home</a>
+                </li>
+                <li>
+                  <a class="Navlink" href="/mymeet">My Meetings</a>
+                </li>
+                <li>
+                  <a class="Navlink" href="/createmeet">Create a Meeting</a>
+                </li>
+                <li>
+                  <a class="Navlink" href="/search">Search</a>
+                </li>
+                <li>
+                  <a class="Navlink" href="/profile">Profile</a>
+                </li>
+                <li>
+                    <a class="Navlink" href="/logout">Log out</a>
+                </li>
+            </ul>
+        </div>
+      </div>
+    <div class="main-area" style="background:rgb(255, 255, 255);font-size:1.12em; color: rgb(5, 35, 119);font-weight:600; margin:30px; box-shadow: 0 0 8px 0px black;border-radius: 10px; ">
         <form onsubmit="return false;" style="padding:20px;">
             <div class="form-group" >
                 <span class="form-dets">
                     <label for="Meet-dept">Department: </label>
                     <select class="form-control" id="Meet-dept" style="width:30%;display:inline-block;">
-                        <option>Support</option>
-                        <option>Services</option>
-                        <option>Marketing</option>
+                        <option>Finance</option>
+                        <option>Sales</option>
+                        <option>Information Systems</option>
                         <option>Engineering</option>
-                        <option>Product Management</option>
-                        <option>Business Development</option>
-                        <option>Accounting</option>
-                        <option>Training</option>
-                        <option>Research and Development</option>
+                        <option>Human Resources</option>
                     </select></span>
                 <span class="form-dets">
                     <label for="Meet-date">Date </label>
@@ -67,7 +71,7 @@
                 </span>
                 
             </div>
-            <button type="submit" class="createBtn">CREATE</button>
+            <button type="submit" class="btn btn-primary">CREATE</button>
         </div>
         </form>
         <div id="meet-summary">

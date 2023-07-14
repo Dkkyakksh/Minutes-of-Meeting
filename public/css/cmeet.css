@@ -21,11 +21,11 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color:rgb(0,0,0,0.8);
+    background-color:rgba(0, 0, 0, 0.87);
     z-index: 1;
 }
 h3{
-    color: rgb(0, 0, 0);
+    color: rgb(3,25,87);
 }
 #ov-card{
     position: absolute;
@@ -34,30 +34,21 @@ h3{
     top: 50%;
     left: 50%;
     margin:10px;
-    padding:15px;
+    padding:15px 0 0 0 ;
     
     transform:translate(-50%, -50%);
     border-radius: 10px;
-    background-color: rgba(255, 245, 245, 0.85);
-    color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0,0,0);
     font-size: 1.5em;
+    box-shadow: 0 0 20px 1px;
 }
 .d-box{
     padding: 10px 20px;
-    border-radius: 10px;
-    border: 1.5px solid white;
-    background-color: rgb(0, 0, 0);
+    border-top: 3px solid rgb(3,25,87);
+    background-color: rgb(219,219,219);
 }
-.createBtn{
-    display: inline-block;
-    color:rgb(0, 0, 0);
-    background: white;
-    font-weight: 700;
-    margin: 0 20px;
-    padding: 6px 20px;
+.btn:hover{
+    background-color: rgb(243,112,34);
     border: none;
-    border-radius: 5px;
-}
-.createBtn:hover{
-    box-shadow: 0 0 10px white;
 }

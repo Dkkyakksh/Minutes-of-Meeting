@@ -1,0 +1,35 @@
+.Navbar {
+    display: grid;
+    grid-template-columns: auto auto;
+    border-bottom: 3px solid rgb(3, 25, 87);
+    font-family: sans-serif;
+    font-weight: 600;
+    background-color: white;
+}
+.logo{
+    justify-self: left;
+}
+.Nav-links{
+    justify-self: right;
+    align-self: end;
+}
+.Nav-links ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+.Nav-links li{
+    padding: 10px;
+    margin: 0 10px;
+    border-bottom: 3px solid white;
+}
+.Nav-links li:hover{
+    border-bottom: 3px solid rgb(5, 35, 119);
+}
+.Navlink{
+    text-decoration: none;
+    color: rgb(3,25,87);
+}
+.Navlink:hover{
+    text-decoration: none;
+}

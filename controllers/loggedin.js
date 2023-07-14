@@ -6,6 +6,8 @@ const loggedIn = (req,res,next)=>{
 
     try{
         const decoded = jwt.verify(req.cookies.userRegistered, process.env.JWT_SECRET);
+        const decodeAccess = jwt.verify(req.cookies.userAccessLevel, process.env.JWT_SECRET);
+        req.userAccess = decodeAccess;
         db.query("SELECT * FROM employee WHERE employeeid = ?", [decoded.id], (err,result)=>{
             if(err) return next(err);
             req.user = result[0];

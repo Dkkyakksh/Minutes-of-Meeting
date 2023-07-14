@@ -1,33 +1,28 @@
-body{
-    background-image: url('../img/showmeet.jpg');
-    background-size: 100% 100%;
-}
 .meet-area{
     display: grid;
     grid-template-columns: auto auto auto auto ;
     grid-template-rows: auto auto;
 }
+h4{
+    font-family: Roboto;
+}
 .meet-dets{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background: rgba(0, 0, 0, 0.90);
+    background: rgb(255, 255, 255);
+    border-bottom: 3px solid rgb(3,25,87);
     padding:10px 20px;
 }
-.meet-dets:hover{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background: rgba(0, 0, 0, 0.97);
-    padding:10px 20px;
+.hidden-attendee{
+    visibility: hidden;
 }
-
 .meet-attendee{
     min-height: 500px;
     font-weight:600;
     margin: 0 1px;
-    padding: 10px 20px;
-    border-left: 1px solid black;
+    padding: 20px 20px;
+    border-left: 2px solid rgb(3,25,87);
 }
 
 .meet-mom{
@@ -39,18 +34,18 @@ body{
 
 .meet-item{
     flex: 0 0 calc(100%/2);
-    color: white;
+    color: rgb(3,25,87);
 }
 
 .editBtn, .deleteBtn, #addBtn, #attendBtnActive, #updateBtn{
     display: inline-block;
     color:white;
-    background: rgb(17, 17, 17);
+    background: rgb(0, 68, 255);
     padding: 6px 10px;
     border: none;
     border-radius: 2px;
 }
-.attendBtnInactive{
+#attendBtnInactive{
     display: inline-block;
     color:white;
     background: rgba(17, 17, 17, 0.5);
