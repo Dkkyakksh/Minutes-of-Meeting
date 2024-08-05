@@ -13,7 +13,7 @@ const login = async(req, res)=>{
                 return res.json({status: "error", error:"Incorrect Email or password"});
             else{
                 let accessLevel = 'basic';
-                if(result[0].Designation=='senior manager' || result[0].Designation=='manager'){
+                if(result[0].Designation.toLowerCase().includes('manager')){
                     accessLevel = 'higher';
                 }
 
